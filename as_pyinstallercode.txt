@@ -1,0 +1,1 @@
+pyinstaller autosplitter.py --onefile --exclude-module pyinstallercode.txt --exclude-module settings.config --exclude-module hundo_sequence_labels.txt --exclude-module README.md --exclude-module .gitignore

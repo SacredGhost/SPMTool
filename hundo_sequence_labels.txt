@@ -1,0 +1,12 @@
+0 = After Any% credits
+1 = After Entering 1-1
+2 = AFter Flopside Pit 1
+3 = After Flopside Pit 2
+4 = After Amazy Dayzee Grind
+5 = After Return Pipe from 7-1
+6 = After Return Pipe from 8-4
+7 = After Dyllis Deluxe
+8 = After Dyllis Dynamite
+9 = After Return Pipe from 5-3
+10 = After Entering Card Shop
+11 = After Exiting Card Shop

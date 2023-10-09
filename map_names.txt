@@ -1,0 +1,564 @@
+aa1
+aa1_01: Mario's house
+aa1_02: Mario's bedroom
+
+aa2
+aa2_01: Bowser's Castle exterior
+aa2_02: Bowser's Castle interior
+
+aa3
+aa3_01: The end screen (a black map with grasses and a picture of Tippi and Bleck near a tree, also used in the credits)
+
+aa4
+aa4_01: The intro map (loads the intro cutscene upon loading)
+
+an1
+an1_01: The Underwhere, map with the healing fountain
+an1_02: The Underwhere, map with the two floors
+an1_03: The Underwhere, map with the River Twigg surface
+an1_04: The Underwhere, map with the iron floor (rightmost map of the chapter)
+an1_05: The Underwhere, map with the Star Block
+an1_06: The Underwhere, sewers at the bottom of River Twigg
+an1_07: The Underwhere, map with the three orange spout
+an1_08: The Underwhere, map with only pipes (the map you go to meet Luvbi after getting Luigi)
+an1_09: The Underwhere, underground map with blocks
+an1_10: The Underwhere, underground map with a blue switch
+an1_11: The Underwhere, underground map with a Gigabite
+
+an2
+an2_01: Underwhere Road, corridor with a door on the right
+an2_02: Underwhere Road, dark map with Dorguy The First
+an2_03: Underwhere Road, corridor with three door and a save block
+an2_04: Underwhere Road, dark map with a door on the left
+an2_05: Underwhere Road, dark map with Dorguy The Second
+an2_06: Underwhere Road, corridor with the red door
+an2_07: Underwhere Road, map with the three sisters
+an2_08: Underwhere Road, dark map with Dorguy The Third
+an2_09: Underwhere Road, map with the Star Block
+an2_10: Underwhere Road, underground map with coins
+
+an3
+an3_01: Overthere Stair, Stair 1
+an3_02: Overthere Stair, Stair 4 (map with a save block near a door)
+an3_03: Overthere Stair, Stair 5
+an3_04: Overthere Stair, map with Star Block
+an3_05: Overthere Stair, map with Blue Apples tree
+an3_06: Overthere Stair, map with the Gold Apple tree
+an3_07: Overthere Stair, map with Yellow Apples tree
+an3_08: Overthere Stair, map with Red Apples tree
+an3_09: Overthere Stair, map with Pink Apples tree
+an3_10: Overthere Stair, map with Black Apples tree
+an3_11: Overthere Stair, map with Skellobits
+an3_12: Overthere Stair, Stair 2
+an3_13: Overthere Stair, Stair 3
+an3_14: Overthere Stair, Stair 6
+an3_15: Overthere Stair, Stair 7 (map with Cyrrus)
+an3_16: Overthere Stair, map with the planet Earth (loads the cutscene of being launched into space upon loading)
+
+an4
+an4_01: The Overthere, sector 1
+an4_02: The Overthere, sector 3 (map with Overvator and a save block)
+an4_03: The Overthere, sector 4 (map with rainbow bridge)
+an4_04: The Overthere, sector 2 (map with Blubi)
+an4_05: The Overthere, sector 5 (map with a platform controlled by a red block switch)
+an4_06: The Overthere, sector 6 (map with Yebbi)
+an4_07: The Overthere, sector 7 (map with Rebbi)
+an4_08: The Overthere, sector 8
+an4_09: The Overthere, map with stairs and a save block near a door
+an4_10: The Overthere, map with Star Block
+an4_11: The Overthere, map with a Gigabite
+an4_12: The Overthere, map with coins and two treasure chests
+
+bos
+bos_01: The green boss fight map
+
+dan
+dan_01: Flipside Pit of 100 Trials, Room 1-9, 11-19 and 21-25
+dan_02: Flipside Pit of 100 Trials, Room 26-29, 31-39 and 41-49
+dan_03: Flipside Pit of 100 Trials, Room 51-59, 61-69 and 71-75
+dan_04: Flipside Pit of 100 Trials, Room 76-79, 81-89 and 91-99
+dan_11: UNUSED Flipside Pit of 100 Trials, Room with all doors, pipes and walls (placeholder for the treasure chest rooms)
+dan_12: UNUSED Flipside Pit of 100 Trials, Underground map with brown walls, green background wall and green doors
+dan_13: UNUSED Flipside Pit of 100 Trials, Underground map with brown blocks walls, yellow background wall and yellow doors
+dan_14: UNUSED Flipside Pit of 100 Trials, Wracktail fight room (with a black background)
+dan_21: Flipside Pit of 100 Trials, Room 10 and 20
+dan_22: Flipside Pit of 100 Trials, Room 30 and 40
+dan_23: Flipside Pit of 100 Trials, Room 50, and 60
+dan_24: Flipside Pit of 100 Trials, Room 70, 80 and 90
+dan_30: Flipside Pit of 100 Trials, Wracktail fight room (Room 100)
+dan_41: Flopside Pit of 100 Trials, Room 1-9, 11-19 and 21-25
+dan_42: Flopside Pit of 100 Trials, Room 26-29, 31-39 and 41-49
+dan_43: Flopside Pit of 100 Trials, Room 51-59, 61-69 and 71-75
+dan_44: Flopside Pit of 100 Trials, Room 76-79, 81-89 and 91-99
+dan_61: Flopside Pit of 100 Trials, Room 10 and 20
+dan_62: Flopside Pit of 100 Trials, Room 30 and 40
+dan_63: Flopside Pit of 100 Trials, Room 50, and 60
+dan_64: Flopside Pit of 100 Trials, Room 70, 80 and 90
+dan_70: Flopside Pit of 100 Trials, Shadoo fight room (Room 100)
+
+dos
+dos_01: UNUSED, map with yellow ground and ceiling with black background
+
+gn1
+gn1_01: Downtown of Crag, map with the village
+gn1_02: Downtown of Crag, map with the short blocks code
+gn1_03: Downtown of Crag, map with the long blocks code and the Star Block
+gn1_04: Downtown of Crag, map with the cave background and the Shlorps
+gn1_05: Downtown of Crag, underground map with coins underwater
+
+gn2
+gn2_01: Gap of Crag, map with the Water Tablet chest
+gn2_02: Gap of Crag, map with the three stones
+gn2_03: Gap of Crag, map with the Stone Tablet
+gn2_04: Gap of Crag, map with the Fire Tablet
+gn2_05: Gap of Crag, map with the Star Block
+gn2_06: Gap of Crag, map with the Tablet order written in the background
+
+gn3
+gn3_01: Floro Caverns, map with Flint Cragley
+gn3_02: UNUSED Floro Caverns,, map with two pipes, two doors, a save block and some enemies
+gn3_03: Floro Caverns, map with a save block
+gn3_04: Floro Caverns, small room
+gn3_05: Floro Caverns, secret map with treasure chest
+gn3_06: Floro Caverns, map with the first crew member
+gn3_07: Floro Caverns, very small room
+gn3_08: Floro Caverns, map with the second crew member
+gn3_09: Floro Caverns, map with the Star Block
+gn3_10: Floro Caverns, secret map with a block
+gn3_11: Floro Caverns, first minecart track
+gn3_12: Floro Caverns, second minecart track
+gn3_13: Floro Caverns, third minecart track
+gn3_14: Floro Caverns, map with Mega Star
+gn3_15: Floro Caverns, map with long corridor
+gn3_16: Floro Caverns, map with coins
+
+gn4
+gn4_01: Floro Caverns, first map (with iron door on the right)
+gn4_02: Floro Caverns, map with a save block near an iron door
+gn4_03: Floro Caverns, Dottie room
+gn4_04: Floro Caverns, map with two pipes and a door
+gn4_05: Floro Caverns, map with Reversya Cursya, a pipe and two doors
+gn4_06: Floro Caverns, map with Spike Top, a pipe and a door
+gn4_07: Floro Caverns, map with a skull on the wall
+gn4_08: Floro Caverns, map with Heavy Cursya, a pipe and two doors
+gn4_09: Floro Caverns, map with a Blomeba a pipe and a door
+gn4_10: Floro Caverns, map with two iron doors and a card key slot
+gn4_11: Floro Caverns, map with an iron door, two pipe and a ? block
+gn4_12: Floro Caverns, map with the Cragnons cages and the Cursya
+gn4_13: Floro Caverns, map with two pipes (the room where you meet Dimentio)
+gn4_14: Floro Caverns, map with the scanner
+gn4_15: Floro Caverns, map with the Floro Queens portraits
+gn4_16: Floro Caverns, map with the Star Block
+gn4_17: Floro Caverns, secret map with a mini pipe and ? blocks
+
+go1
+go1_01: UNUSED Game Over map with Japanese letters
+go1_02: Game Over map (everything is in black)
+
+he1
+he1_01: Lineland Road, map with Bestovious's house
+he1_02: Lineland Road, map with the hills in the background
+he1_03: Lineland Road, underground map with a treasure chest
+he1_04: Lineland Road, map with brown blocks stairs
+he1_05: Lineland Road, map with Mega Star and Star Block
+he1_06: Lineland Road, inside Bestovius's house
+
+he2
+he2_01: Mount Lineland, map with blue switch
+he2_02: Mount Lineland, map with Spiny Tromps
+he2_03: Mount Lineland, map with village
+he2_04: Mount Lineland, inside Red's house
+he2_05: Mount Lineland, inside Green's house
+he2_06: Mount Lineland, underground map with Thwomps
+he2_07: Mount Lineland, Thoreau room
+he2_08: Mount Lineland, underground room with coins
+he2_09: Mount Lineland, map with 2 star door near each other
+
+he3
+he3_01: Yold Desert, map with the red palm tree
+he3_02: Yold Desert, map with the rock that has an arrow above it
+he3_03: Yold Desert, map with the save block
+he3_04: Yold Desert, O'Chunks fight map
+he3_05: Yold Desert, underground map with ? blocks
+he3_06: Yold Desert, map with yellow moving platforms
+he3_07: Yold Desert, map with blue stone
+he3_08: Yold Desert, map with blue pedestal Star Block
+
+he4
+he4_01: Yold Ruins, first map
+he4_02: Yold Ruins, map with a fire bar and three moving sand pits
+he4_03: Yold Ruins, map with five fire bars and three doors
+he4_04: Yold Ruins, map with two Spiky Tromp and a treasure chest
+he4_05: Yold Ruins, map with a save block and a large moving sand pit
+he4_06: Yold Ruins, map with a blue switch and an enemy pipe
+he4_07: Yold Ruins, map with three firebars, two doors and a frame of brown blocks
+he4_08: Yold Ruins, map with the Spiky Tromps cages
+he4_09: Yold Ruins, map with a save block near a pipe
+he4_10: Yold Ruins, Fracktail fight map
+he4_11: Yold Ruins, map with Star Block
+he4_12: Yold Ruins, map with hidden a hidden platform underneath a door
+
+ls1
+ls1_01: Castle Bleck Entry, castle entrance
+ls1_02: Castle Bleck Entry, map with a big door on the left
+ls1_03: Castle Bleck Entry, map with three doors and two staircases
+ls1_04: Castle Bleck Entry, map outside the castle with a dead end on the left
+ls1_05: Castle Bleck Entry, map with three doors and a platform in the air
+ls1_06: Castle Bleck Entry, map outside the castle with a pipe
+ls1_07: Castle Bleck Entry, map with a small corridor and a treasure chest
+ls1_08: Castle Bleck Entry, map with corridor and a lot of enemies
+ls1_09: Castle Bleck Entry, map with fire torches
+ls1_10: Castle Bleck Entry, map with huge staircase
+ls1_11: Castle Bleck Entry, O'Chunks fight map
+ls1_12: Castle Bleck Entry, map with Star Block
+
+ls2
+ls2_01: Castle Bleck Foyer, first map
+ls2_02: Castle Bleck Foyer, map with 3 treasure chests above the ceiling
+ls2_03: Castle Bleck Foyer, map with the prison cell
+ls2_04: Castle Bleck Foyer, map with firebars and a red switch block
+ls2_05: Castle Bleck Foyer, map with spikes and a red switch block
+ls2_06: Castle Bleck Foyer, map with five pipes
+ls2_07: Castle Bleck Foyer, map with three doors and 2 staircases
+ls2_08: Castle Bleck Foyer, map with three Cursya outside of the castle
+ls2_09: Castle Bleck Foyer, map with suspended Mushrooms
+ls2_10: Castle Bleck Foyer, map with three Shlorp
+ls2_11: Castle Bleck Foyer, map with three Cherbil
+ls2_12: Castle Bleck Foyer, map with Chromeba
+ls2_13: Castle Bleck Foyer, map with small room and two doors
+ls2_14: Castle Bleck Foyer, first hated thing room
+ls2_15: Castle Bleck Foyer, second hated thing room
+ls2_16: Castle Bleck Foyer, third hated thing room
+ls2_17: Castle Bleck Foyer, Mimi fight map
+ls2_18: Castle Bleck Foyer, map with Star Block
+
+ls3
+ls3_01: Castle Bleck Interior, first map
+ls3_02: Castle Bleck Interior, map with Hogarithm and two doors
+ls3_03: Castle Bleck Interior, first map with glass frames
+ls3_04: Castle Bleck Interior, map with three doors and two staircases
+ls3_05: Castle Bleck Interior, first map with three blocks
+ls3_06: Castle Bleck Interior, second map with three blocks
+ls3_07: Castle Bleck Interior, third map with three blocks
+ls3_08: Castle Bleck Interior, map with three Red Chomp and a blue switch block
+ls3_09: Castle Bleck Interior, fourth map with three blocks
+ls3_10: Castle Bleck Interior, map with multiple platforms and two doors
+ls3_11: Castle Bleck Interior, second map with glass frames
+ls3_12: Castle Bleck Interior, Dimentio fight map
+ls3_13: Castle Bleck Interior, map with Star Block
+
+ls4
+ls4_01: Castle Bleck Inner Sanctum, first map
+ls4_02: UNUSED Castle Bleck Inner Sanctum,, large empty map with a door
+ls4_03: Castle Bleck Inner Sanctum, map with the pillar that goes up and down
+ls4_04: Castle Bleck Inner Sanctum, map with rectangular platforms elevators
+ls4_05: Castle Bleck Inner Sanctum, map with mini corridor and a treasure chest
+ls4_06: Castle Bleck Inner Sanctum, map with large corridor and a lot of enemies
+ls4_07: Castle Bleck Inner Sanctum, first map with labyrinth
+ls4_08: Castle Bleck Inner Sanctum, second map with labyrinth
+ls4_09: Castle Bleck Inner Sanctum, third map with labyrinth
+ls4_10: Castle Bleck Inner Sanctum, map with long staircase and a save block
+ls4_11: Castle Bleck Inner Sanctum, map with Star block
+ls4_12: Castle Bleck Inner Sanctum, wedding map
+ls4_13: Castle Bleck Inner Sanctum, map with small corridor and two doors
+
+mac
+mac_01: Flipside 3rd Floor and 3rd Floor Outskirt
+mac_02: Flipside 2nd Floor, Tower and 2nd Floor Outskirt
+mac_03: Mirror Hall
+mac_04: Flipside B1
+mac_05: Flipside B2
+mac_06: Flipside 1st Floor Outskirt
+mac_07: Flipside B1 Outskirt
+mac_08: Flipside, map with a red spring and two treasure chests
+mac_09: Flipside 1st Floor
+mac_11: Flopside 3rd Floor and 3rd Floor Outskirt
+mac_12: Flopside 2nd Floor, Tower and 2nd Floor Outskirt
+mac_14: Flopside B1
+mac_15: Flopside B2
+mac_16: Flopside 1st Floor Outskirt
+mac_17: Flopside B1 Outskirt
+mac_18: Flopside map with red spring and a treasure chest
+mac_19: Flopside 1st Floor
+mac_22: Flipside Tower (incomplete, used in some cutscenes)
+mac_30: Flipside, the arcade
+
+mg1
+mg1_01: Tilt Island map
+
+mg2
+mg2_01: Forget Me Not first map
+mg2_02: Forget Me Not second map
+mg2_03: Forget Me Not third map
+mg2_04: Forget Me Not fourth map
+mg2_05: Forget Me Not fifth map
+
+mg3
+mg3_01: Hammer Whacker first map
+mg3_02: Hammer Whacker second map
+mg3_03: Hammer Whacker third map
+mg3_04: Hammer Whacker fourth map
+mg3_05: Hammer Whacker fifth map
+
+mg4
+mg4_01: Mansion Patrol map
+
+mi1
+mi1_01: Gloam Valley, first map
+mi1_02: Gloam Valley, map with three floors and two Spiky Goombas
+mi1_03: Gloam Valley, map with three floors and two Shlurps
+mi1_04: Gloam Valley, map with Star Block
+mi1_05: Gloam Valley, underground map with a treasure chest and some Squigs
+mi1_06: Gloam Valley, map with an invisible blue switch block
+mi1_07: Gloam Valley, map of Boomer chest
+mi1_08: Gloam Valley, map with wind turbines in the background
+mi1_09: Gloam Valley, map with Lock (an npc)
+mi1_10: Gloam Valley, map with six doors
+mi1_11: Gloam Valley, map with Mega Star
+
+mi2
+mi2_01: Merlee's Mansion, entrance of the mansion
+mi2_02: Merlee's Mansion, map with small crystal ball
+mi2_03: Merlee's Mansion, map with six doors
+mi2_04: Merlee's Mansion, map with a suspended Mushroom
+mi2_05: Merlee's Mansion, map with a trail of coins
+mi2_06: Merlee's Mansion, map with spikes ceiling
+mi2_07: Merlee's Mansion, map with a Mushrooms on the floor attached to a chain
+mi2_08: Merlee's Mansion, map with Star Block
+mi2_09: Merlee's Mansion, underground map with a Shlurp
+mi2_10: Merlee's Mansion, underground map with two Swoopers
+mi2_11: Merlee's Mansion, underground map with three Boos
+
+mi3
+mi3_01: Merlee's Mansion, main map
+mi3_02: Merlee's Mansion, map with the npc who gives you the safe code
+mi3_03: Merlee's Mansion, map with the spinning wheel
+mi3_04: Merlee's Mansion, map with the electrical blocks
+mi3_05: Merlee's Mansion, map with an infinite Mushroom blocks
+mi3_06: Merlee's Mansion, map with the Star Block
+
+mi4
+mi4_01: Merlee's Basement, first map
+mi4_02: Merlee's Basement, Room 01
+mi4_03: Merlee's Basement, Room 02
+mi4_04: Merlee's Basement, Room 03
+mi4_05: Merlee's Basement, Room 04
+mi4_06: Merlee's Basement, map with a red background wall and two floors
+mi4_07: Merlee's Basement, Room 06
+mi4_08: Merlee's Basement, Room 07
+mi4_09: Merlee's Basement, map with a narrow hole on the floor
+mi4_10: Merlee's Basement, Room 08
+mi4_11: Merlee's Basement, Room 09
+mi4_12: Merlee's Basement, map with two bathroom doors and a save block
+mi4_13: Merlee's Basement, mens bathroom
+mi4_14: Merlee's Basement, women bathroom (with the Star Block)
+mi4_15: Merlee's Basement, map with an Atomic Boo
+
+sp1
+sp1_01: Outer Space, first map
+sp1_02: Outer Space, map with enemies, a black hole and a save block
+sp1_03: Outer Space, map with enemies and two black holes on the right
+sp1_04: Outer Space, map with enemies and two black holes on the left
+sp1_05: Outer Space, map with two black holes and Warpids
+sp1_06: Outer Space, map with Star Block
+sp1_07: Outer Space, secret map with coins and a ? block
+
+sp2
+sp2_01: Planet Blobule, map with bathroom
+sp2_02: Planet Blobule, map with Star Block
+sp2_03: Planet Blobule, map with a save block nearby a star door
+sp2_04: Planet Blobule, map with Hooligons and 2 ? blocks
+sp2_05: Planet Blobule, map with green and purple door on the right
+sp2_06: Planet Blobule, map with Blollop (yellow Blobule)
+sp2_07: Planet Blobule, map with Blarfle (blue Blobule)
+sp2_08: Planet Blobule, map with Blappy (purple Blobule)
+sp2_09: Planet Blobule, secret map with blue flowers in the background and coins
+sp2_10: Planet Blobule, map with Mega Star
+
+sp3
+sp3_01: Outer Limits, first map
+sp3_02: Outer Limits, map with two green giant doors
+sp3_03: Outer Limits, map with Star Block
+sp3_04: Outer Limits, map with multiple black holes
+sp3_05: Outer Limits, map with the Twinkle Mart
+sp3_06: Outer Limits, map with two black holes and a save block
+sp3_07: Outer Limits, map with a black holes and coins
+
+sp4
+sp4_01: The Whoa Zone, first map
+sp4_02: The Whoa Zone, map with three doors and one of them is hidden
+sp4_03: The Whoa Zone, map with three hidden stairs
+sp4_04: The Whoa Zone, map with four doors and two of them are hidden
+sp4_05: The Whoa Zone, map with a treasure chest and a Barribad
+sp4_06: The Whoa Zone, map that is walked sideways with doors
+sp4_07: The Whoa Zone, map with two doors, a pipe and an upside down treasure chest
+sp4_08: The Whoa Zone, map with and a staircase, one of the doors is upside down
+sp4_09: UNUSED, The Whoa Zone, map with grey blocks and an upside down treasure chest containing Piccolo's card
+sp4_10: The Whoa Zone, map that is walked on all four sides
+sp4_11: The Whoa Zone, map with a save block that has a door upside down
+sp4_12: The Whoa Zone, map with five doors that is walked on three sides and has a treasure chest
+sp4_13: The Whoa Zone, Mr. L fight map
+sp4_14: The Whoa Zone, map with the Star Block
+sp4_15: The Whoa Zone, map with a pipe upside down and a coin block
+sp4_16: The Whoa Zone, map with two doors that has two flipping blocks
+sp4_17: The Whoa Zone, Brobot fight map (loads the Brobot encounter cutscene upon loading, and revert the sequence to 171)
+
+ta1
+ta1_01: The Bitlands, map with two red pipes
+ta1_02: The Bitlands, map with Mega Star
+ta1_03: The Bitlands, retro underground map
+ta1_04: The Bitlands, map with Star Block
+ta1_05: The Bitlands, underground map with two pipes, a treasure chest and a Blomeba
+ta1_06: The Bitlands, retro underground map with brick blocks and a pipe
+ta1_07: The Bitlands, retro underground map with a brick block and a pyramid with a treasure chest behind it
+ta1_08: The Bitlands, retro underground map with five ? blocks
+ta1_09: The Bitlands, map with Mega Koopa
+
+ta2
+ta2_01: The Tile Pool, first map
+ta2_02: The Tile Pool, map with Big Bloopers's tentacles
+ta2_03: The Tile Pool, map with two Spiky Goombas above the surface
+ta2_04: The Tile Pool, map with Thudley chest
+ta2_05: The Tile Pool, Big Blooper fight map
+ta2_06: The Tile Pool, map with a Star Block
+
+ta3
+ta3_01: The Dotwood Tree, first map
+ta3_02: The Dotwood Tree, main map inside the tree with a save block
+ta3_03: The Dotwood Tree, map with red winds
+ta3_04: The Dotwood Tree, map with the Star Block
+ta3_05: The Dotwood Tree, map inside the tree with a yellow pipe and a platform
+ta3_06: The Dotwood Tree, map inside the tree with spikes on the floor
+ta3_07: The Dotwood Tree, map with two Chain Chomp and a treasure chest
+ta3_08: The Dotwood Tree, map inside the tree with a moving platform and spikes on a wall
+
+ta4
+ta4_01: Fort Francis, fort entrance
+ta4_02: Fort Francis, underground map with a treasure chest
+ta4_03: Fort Francis, map with a saveblock
+ta4_04: Fort Francis, map with the cat door
+ta4_05: Fort Francis, map that is an access to the second floor
+ta4_06: Fort Francis, map with the two doors that hangs on the wall
+ta4_07: Fort Francis, map that is an access to the third floor
+ta4_08: Fort Francis, map that is outside the castle with a bridge
+ta4_09: Fort Francis, map with the right room door
+ta4_10: Fort Francis, map with the right room treasure chest
+ta4_11: Fort Francis, map with the left room elevator
+ta4_12: Fort Francis, map with Carrie
+ta4_13: Fort Francis, map with the Star Block
+ta4_14: Fort Francis, map with spikes on the floor
+ta4_15: Fort Francis, map with a red button and a Chain Chomp
+
+tit
+title: map of the title screen
+
+wa1
+wa1_01: Sammer's Kingdom, first map
+wa1_02: Sammer's Kingdom, map of the 1st gate
+wa1_03: Sammer's Kingdom, map of the 2nd gate
+wa1_04: Sammer's Kingdom, map of the 3th gate
+wa1_05: Sammer's Kingdom, map of the 4th gate
+wa1_06: Sammer's Kingdom, map of the 5th gate
+wa1_07: Sammer's Kingdom, map of the 6th gate
+wa1_08: Sammer's Kingdom, map of the 7th gate
+wa1_09: Sammer's Kingdom, map of the 8th gate
+wa1_10: Sammer's Kingdom, map of the 9th gate
+wa1_11: Sammer's Kingdom, map of the 10th gate
+wa1_12: Sammer's Kingdom, map of the 11th gate
+wa1_13: Sammer's Kingdom, map of the 12th gate
+wa1_14: Sammer's Kingdom, map of the 13th gate
+wa1_15: Sammer's Kingdom, map of the 14th gate
+wa1_16: Sammer's Kingdom, map of the 15th gate
+wa1_17: Sammer's Kingdom, map of the 16th gate
+wa1_18: Sammer's Kingdom, map of the 17th gate
+wa1_19: Sammer's Kingdom, map of the 18th gate
+wa1_20: Sammer's Kingdom, map of the 19th gate
+wa1_21: Sammer's Kingdom, map of the 20th gate
+wa1_22: Sammer's Kingdom, map of the 21th gate
+wa1_23: Sammer's Kingdom, map of the 22th gate
+wa1_24: Sammer's Kingdom, map of the 23th gate
+wa1_25: Sammer's Kingdom, map of the 24th gate
+wa1_26: Sammer's Kingdom, map of the 25th gate (with the Star Block)
+wa1_27: Sammer's Kingdom, map of the World of Nothing
+
+wa2
+wa2_01: Sammer's Early Duels, map of the 26th gate
+wa2_02: Sammer's Early Duels, map of the 27th gate
+wa2_03: Sammer's Early Duels, map of the 28th gate
+wa2_04: Sammer's Early Duels, map of the 29th gate
+wa2_05: Sammer's Early Duels, map of the 30th gate
+wa2_06: Sammer's Early Duels, map of the 31th gate
+wa2_07: Sammer's Early Duels, map of the 32th gate
+wa2_08: Sammer's Early Duels, map of the 33th gate
+wa2_09: Sammer's Early Duels, map of the 34th gate
+wa2_10: Sammer's Early Duels, map of the 35th gate
+wa2_11: Sammer's Early Duels, map of the 36th gate
+wa2_12: Sammer's Early Duels, map of the 37th gate
+wa2_13: Sammer's Early Duels, map of the 38th gate
+wa2_14: Sammer's Early Duels, map of the 39th gate
+wa2_15: Sammer's Early Duels, map of the 40th gate
+wa2_16: Sammer's Early Duels, map of the 41th gate
+wa2_17: Sammer's Early Duels, map of the 42th gate
+wa2_18: Sammer's Early Duels, map of the 43th gate
+wa2_19: Sammer's Early Duels, map of the 44th gate
+wa2_20: Sammer's Early Duels, map of the 45th gate
+wa2_21: Sammer's Early Duels, map of the 46th gate
+wa2_22: Sammer's Early Duels, map of the 47th gate
+wa2_23: Sammer's Early Duels, map of the 48th gate
+wa2_24: Sammer's Early Duels, map of the 49th gate
+wa2_25: Sammer's Early Duels, map of the 50th gate (with the Star Block)
+
+wa3
+wa3_01: Sammer's Proving Grounds, map of the 51th gate
+wa3_02: Sammer's Proving Grounds, map of the 52th gate
+wa3_03: Sammer's Proving Grounds, map of the 53th gate
+wa3_04: Sammer's Proving Grounds, map of the 54th gate
+wa3_05: Sammer's Proving Grounds, map of the 55th gate
+wa3_06: Sammer's Proving Grounds, map of the 56th gate
+wa3_07: Sammer's Proving Grounds, map of the 57th gate
+wa3_08: Sammer's Proving Grounds, map of the 58th gate
+wa3_09: Sammer's Proving Grounds, map of the 59th gate
+wa3_10: Sammer's Proving Grounds, map of the 60th gate
+wa3_11: Sammer's Proving Grounds, map of the 61th gate
+wa3_12: Sammer's Proving Grounds, map of the 62th gate
+wa3_13: Sammer's Proving Grounds, map of the 63th gate
+wa3_14: Sammer's Proving Grounds, map of the 64th gate
+wa3_15: Sammer's Proving Grounds, map of the 65th gate
+wa3_16: Sammer's Proving Grounds, map of the 66th gate
+wa3_17: Sammer's Proving Grounds, map of the 67th gate
+wa3_18: Sammer's Proving Grounds, map of the 68th gate
+wa3_19: Sammer's Proving Grounds, map of the 69th gate
+wa3_20: Sammer's Proving Grounds, map of the 70th gate
+wa3_21: Sammer's Proving Grounds, map of the 71th gate
+wa3_22: Sammer's Proving Grounds, map of the 72th gate
+wa3_23: Sammer's Proving Grounds, map of the 73th gate
+wa3_24: Sammer's Proving Grounds, map of the 74th gate
+wa3_25: Sammer's Proving Grounds, map of the 75th gate (with the Star Block)
+
+wa4
+wa4_01: Sammer's Endgame, map of the 76th gate
+wa4_02: Sammer's Endgame, map of the 77th gate
+wa4_03: Sammer's Endgame, map of the 78th gate
+wa4_04: Sammer's Endgame, map of the 79th gate
+wa4_05: Sammer's Endgame, map of the 80th gate
+wa4_06: Sammer's Endgame, map of the 81th gate
+wa4_07: Sammer's Endgame, map of the 82th gate
+wa4_08: Sammer's Endgame, map of the 83th gate
+wa4_09: Sammer's Endgame, map of the 84th gate
+wa4_10: Sammer's Endgame, map of the 85th gate
+wa4_11: Sammer's Endgame, map of the 86th gate
+wa4_12: Sammer's Endgame, map of the 87th gate
+wa4_13: Sammer's Endgame, map of the 88th gate
+wa4_14: Sammer's Endgame, map of the 89th gate
+wa4_15: Sammer's Endgame, map of the 90th gate
+wa4_16: Sammer's Endgame, map of the 91th gate
+wa4_17: Sammer's Endgame, map of the 92th gate
+wa4_18: Sammer's Endgame, map of the 93th gate
+wa4_19: Sammer's Endgame, map of the 94th gate
+wa4_20: Sammer's Endgame, map of the 95th gate
+wa4_21: Sammer's Endgame, map of the 96th gate
+wa4_22: Sammer's Endgame, map of the 97th gate
+wa4_23: Sammer's Endgame, map of the 98th gate
+wa4_24: Sammer's Endgame, map of the 99th gate
+wa4_25: Sammer's Endgame, map of the 100th gate
+wa4_26: Sammer's Endgame, map with the Star Block
