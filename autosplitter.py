@@ -399,7 +399,7 @@ if __name__ == "__main__":
         framewaitcount = 0
         while framewaitcount < FPS:
             currentPADbutton = buttonsPADHeld.read()
-            if currentPADbutton != 0:
+            if 1 <= currentPADbutton <= 10:
                 print(f'{"[" + "AutoSplitter" + "]":>15} Split canceled, please go back to file select')
                 fileError = True
                 break
