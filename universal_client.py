@@ -6,7 +6,7 @@ def run_script(script_name):
     except FileNotFoundError:
         print(f"Script '{script_name}.py' not found.")
     except subprocess.CalledProcessError:
-        print(f"Error running script '{script_name}.py'.")
+        print(f"Error running script '{script_name}.py', please report the error")
 
 def main():
     while True:

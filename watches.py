@@ -388,6 +388,78 @@ watches = {
         },
         "datatype": Datatype.BYTE
     },
+    "HP" : {
+        "addresses" : {
+            "E": [0x0, 0x0, 0x0],
+            "P": [0x0, 0x0],
+            "J": [0x0, 0x0],
+            "K": [0x0]
+        },
+        "datatype": Datatype.BYTE
+    },
+    "Max HP" : {
+        "addresses" : {
+            "E": [0x0, 0x0, 0x0],
+            "P": [0x0, 0x0],
+            "J": [0x0, 0x0],
+            "K": [0x0]
+        },
+        "datatype": Datatype.BYTE
+    },
+    "Attack" : {
+        "addresses" : {
+            "E": [0x0, 0x0, 0x0],
+            "P": [0x0, 0x0],
+            "J": [0x0, 0x0],
+            "K": [0x0]
+        },
+        "datatype": Datatype.BYTE
+    },
+    "Coins" : {
+        "addresses" : {
+            "E": [0x0, 0x0, 0x0],
+            "P": [0x0, 0x0],
+            "J": [0x0, 0x0],
+            "K": [0x0]
+        },
+        "datatype": Datatype.BYTE
+    },
+    "Score" : {
+        "addresses" : {
+            "E": [0x0, 0x0, 0x0],
+            "P": [0x0, 0x0],
+            "J": [0x0, 0x0],
+            "K": [0x0]
+        },
+        "datatype": Datatype.BYTE
+    },
+    "Level" : {
+        "addresses" : {
+            "E": [0x0, 0x0, 0x0],
+            "P": [0x0, 0x0],
+            "J": [0x0, 0x0],
+            "K": [0x0]
+        },
+        "datatype": Datatype.BYTE
+    },
+    "FlipFlop Pipe" : {
+        "addresses" : {
+            "E": [0x0, 0x0, 0x0],
+            "P": [0x0, 0x0],
+            "J": [0x0, 0x0],
+            "K": [0x0]
+        },
+        "datatype": Datatype.BYTE
+    },
+    "Low HP TextBox" : {
+        "addresses" : {
+            "E": [0x0, 0x0, 0x0],
+            "P": [0x0, 0x0],
+            "J": [0x0, 0x0],
+            "K": [0x0]
+        },
+        "datatype": Datatype.BYTE
+    },
     "Pixl slot 1" : {
         "addresses" : {
             "E": [0x804ceaec, 0, 0],
