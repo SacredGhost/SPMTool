@@ -66,9 +66,9 @@ def main():
         while not dme.is_hooked():
             time.sleep(0.01)
             dme.hook()
-        print(f'{"[" + "Console" + "]":>15} Hooked')
+        print(f'{"[" + "SharedStats" + "]":>15} Hooked')
     else:
-        print(f'{"[" + "Console" + "]":>15} Hooked')
+        print(f'{"[" + "SharedStats" + "]":>15} Hooked')
 
     # Read games data
     previous_data = {}
@@ -87,16 +87,16 @@ def main():
     while True:
         try:
             # Connect to the server
-            print(f'{"[" + "Console" + "]":>15} connecting...')
+            print(f'{"[" + "SharedStats" + "]":>15} connecting...')
             sock.connect((server_ip, server_port))
             break
         except socket.error as e:
-            print(f'{"[" + "Console" + "]":>15} Connection error: {e}')
+            print(f'{"[" + "SharedStats" + "]":>15} Connection error: {e}')
             print('Trying again...')
             time.sleep(5)  # Wait for 5 seconds before attempting reconnection
 
     # Create Username
-    print(f'{"[" + "Console" + "]":>15} Connected to Server')
+    print(f'{"[" + "SharedStats" + "]":>15} Connected to Server')
     sending = {
     'data': {},
     'message': [f'{"[" + username + "]":>15} has joined the channel'],
@@ -104,7 +104,7 @@ def main():
     }
 
     send_data(sock, sending)
-    print(f'{"[" + "Console" + "]":>15} Waiting for updates')
+    print(f'{"[" + "SharedStats" + "]":>15} Waiting for updates')
 
     # Main loop
     while True:
@@ -193,16 +193,16 @@ def main():
 
         # Handle Errors
         except json.JSONDecodeError:
-            print(f'{"[" + "Console" + "]":>15} Invalid JSON data received:')
+            print(f'{"[" + "SharedStats" + "]":>15} Invalid JSON data received:')
             continue
 
         except KeyboardInterrupt:
             # Close the socket
-            print(f'{"[" + "Console" + "]":>15} closing connection')
+            print(f'{"[" + "SharedStats" + "]":>15} closing connection')
             sock.close()
 
         except Exception as e:
-            print(f'{"[" + "Console" + "]":>15} Error:', e)
+            print(f'{"[" + "SharedStats" + "]":>15} Error:', e)
             time.sleep(.1)
 
 if __name__ == '__main__':

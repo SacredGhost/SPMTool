@@ -113,17 +113,6 @@ class BitFieldMemoryWatch(MemoryWatch):
 
 dme.hook()
 
-if not dme.is_hooked():
-    print(f'{"[" + "Console" + "]":>15} Not Hooked, waiting for connection to Dolphin')
-    while not dme.is_hooked():
-        time.sleep(0.01)
-        dme.hook()
-    print(f'{"[" + "Console" + "]":>15} Hooked... waiting for AutoSplitter...')
-    time.sleep(5) # Added a wait as it cannot read the addresses when dophin is still booting the game
-else:
-    print(f'{"[" + "Console" + "]":>15} Hooked... waiting for AutoSplitter...')
-    time.sleep(5)
-
 game_region = chr(dme.read_byte(0x80000003))
 game_revision = dme.read_byte(0x80000007)
 
@@ -320,10 +309,10 @@ watches = {
     },
     "Mario_Y" : {
         "addresses": {
-            "E": [0x804cd4b8, 0, 0],
-            "P": [0, 0],               
-            "J": [0, 0],               
-            "K": [0]                   
+            "E": [0x804CD4B8, 0x804CED38, 0x804CEEB8],
+            "P": [0x805104B8, 0x805104B8],               
+            "J": [0x804A27B8, 0x804A3DB8],               
+            "K": [0x80547DA0]                   
         },
         "datatype": Datatype.FLOAT
     },
@@ -399,7 +388,7 @@ watches = {
         },
         "datatype": Datatype.BYTE
     },
-    "Pixl slots" : {
+    "Pixl slot 1" : {
         "addresses" : {
             "E": [0x804ceaec, 0, 0],
             "P": [0, 0],

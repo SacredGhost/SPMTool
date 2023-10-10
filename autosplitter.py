@@ -3,7 +3,7 @@ import sys
 import time
 import configparser
 from typing import Callable, Any
-from watches import ByteArrayMemoryWatch, Datatype, get_address, get_watch
+from watches import ByteArrayMemoryWatch, Datatype, get_address, get_watch, dme
 from keypresses import PressRelease, keyCodeMap
 
 def restart_program():
@@ -11,6 +11,17 @@ def restart_program():
     os.execl(python, python, *sys.argv)
 
 if __name__ == "__main__":
+
+    if not dme.is_hooked():
+        print(f'{"[" + "AutoSplitter" + "]":>15} Not Hooked, waiting for connection to Dolphin')
+        while not dme.is_hooked():
+            time.sleep(0.01)
+            dme.hook()
+        print(f'{"[" + "AutoSplitter" + "]":>15} Hooked... waiting for AutoSplitter...')
+        time.sleep(5) # Added a wait as it cannot read the addresses when dophin is still booting the game
+    else:
+        print(f'{"[" + "AutoSplitter" + "]":>15} Hooked... waiting for AutoSplitter...')
+        time.sleep(5)
 
     config = configparser.ConfigParser()
     config.read('settings.config')
@@ -26,7 +37,7 @@ if __name__ == "__main__":
 
     epitsplits = config['Settings']['ExtraPitSplits']
 
-    print(f'{"[" + "Console" + "]":>15} SPM Auto Splitter [vBeta2]')
+    print(f'{"[" + "AutoSplitter" + "]":>15} SPM Auto Splitter [vBeta2]')
 
     def do_split(delay):
         current_framecount = frame_count.read()
@@ -146,20 +157,20 @@ if __name__ == "__main__":
         global hundo_sequence
 
         if script_ptr == STAR_BLOCK_EVT_SCRIPT:
-            print(f'{"[" + "Console" + "]":>15} Detected Star Block Hit')
+            print(f'{"[" + "AutoSplitter" + "]":>15} Detected Star Block Hit')
             do_split(STAR_BLOCK_SPLIT_DELAY)
             if hundo_sequence == 12:
-                print(f'{"[" + "Console" + "]":>15} GG :)')
+                print(f'{"[" + "AutoSplitter" + "]":>15} GG :)')
 
         if script_ptr == PURE_HEART_EVT_SCRIPT:
-            print(f'{"[" + "Console" + "]":>15} Pure Heart Detected')
+            print(f'{"[" + "AutoSplitter" + "]":>15} Pure Heart Detected')
             if current_map == "wa1_27":
                 do_split(ROCK_HEART_SPLIT_DELAY)
             else:
                 do_split(PURE_HEART_SPLIT_DELAY)
         
         if script_ptr == RETURN_EVT_SCRIPT:
-            print(f'{"[" + "Console" + "]":>15} Return Cutscene')
+            print(f'{"[" + "AutoSplitter" + "]":>15} Return Cutscene')
             do_split(RETURN_SPLIT_DELAY)
 
         if script_ptr == DOOR_CLOSE_EVT_SCRIPT and (current_map in ANY_SPLIT_MAPS or current_map in PIT_MAPS or current_map in PIT_10_MAPS):
@@ -223,7 +234,7 @@ if __name__ == "__main__":
                 if (-490 <= marioposx <= -410):
                     door_name = "1.89 million Point Grind"
                     split_delay = FADEOUT_DOOR_SPLIT_DELAY
-                    print(f'{"[" + "Console" + "]":>15} 100% run detected')
+                    print(f'{"[" + "AutoSplitter" + "]":>15} 100% run detected')
                 else:
                     valid_door = False
             elif hundo_run:
@@ -243,12 +254,12 @@ if __name__ == "__main__":
                 valid_door = False    
             if (valid_door):
                 if door_name != None:
-                    print(f'{"[" + "Console" + "]":>15} Valid Door: {door_name} Door Detected')
+                    print(f'{"[" + "AutoSplitter" + "]":>15} Valid Door: {door_name} Door Detected')
                     do_split(split_delay)
 
         if script_ptr == CB_DEFEAT_EVT_SCRIPT:
             if CountBleckSplit:
-                print(f'{"[" + "Console" + "]":>15} Count Bleck Defeated')
+                print(f'{"[" + "AutoSplitter" + "]":>15} Count Bleck Defeated')
                 frame_wait(FPS *2)
                 while current_effcurcount != 1:
                     time.sleep(0.01)
@@ -256,12 +267,12 @@ if __name__ == "__main__":
                 do_split(CB_DEFEAT_DELAY)
 
         if script_ptr == SD_DEFEAT_EVT_SCRIPT:
-            print(f'{"[" + "Console" + "]":>15} Super Dimentio Defeated')
+            print(f'{"[" + "AutoSplitter" + "]":>15} Super Dimentio Defeated')
             do_split(SD_DEFEAT_DELAY)
 
         if script_ptr == CREDITS_START_SCRIPT:
             if current_map == "mac_22":
-                print(f'{"[" + "Console" + "]":>15} Credits Detected')
+                print(f'{"[" + "AutoSplitter" + "]":>15} Credits Detected')
                 frame_wait(FPS *2)
                 current_text_opacity_1 = textopacity1.read()
                 current_text_opacity_2 = textopacity2.read()
@@ -291,7 +302,7 @@ if __name__ == "__main__":
                     do_split(START_OR_CREDITS_DELAY)
                     text_box_count = 0
                     if hundo_run == False:
-                        print(f'{"[" + "Console" + "]":>15} GG :)')
+                        print(f'{"[" + "AutoSplitter" + "]":>15} GG :)')
                     else:
                         hundo_sequence = 0
 
@@ -305,25 +316,25 @@ if __name__ == "__main__":
                     valid_pipe = False
                 if valid_pipe:
                     if sequence_position == 99:
-                        print(f'{"[" + "Console" + "]":>15} All Pixls run detected')
-                    print(f'{"[" + "Console" + "]":>15} Pipe split detected')
+                        print(f'{"[" + "AutoSplitter" + "]":>15} All Pixls run detected')
+                    print(f'{"[" + "AutoSplitter" + "]":>15} Pipe split detected')
                     do_split(DOWN_PIPE_DELAY)
                     if current_map == "dan_70" and flopPit == 1:
                         flopPit = 2
                     elif current_map == "dan_70" and flopPit == 2:
                         if hundo_run == False:
-                            print(f'{"[" + "Console" + "]":>15} GG :)')
+                            print(f'{"[" + "AutoSplitter" + "]":>15} GG :)')
                         elif hundo_sequence == 1:
                             hundo_sequence = 2
                         elif hundo_sequence == 2:
                             hundo_sequence = 3
                     elif current_map == "dan_30":
                         if hundo_run == False or current_sequence <= 73:
-                            print(f'{"[" + "Console" + "]":>15} GG :)')
+                            print(f'{"[" + "AutoSplitter" + "]":>15} GG :)')
         
         if script_ptr == RETURN_PIPE_SCRIPT:
             if current_map == "mi1_07" and current_sequence == 73:
-                print(f'{"[" + "Console" + "]":>15} Pit% Return Pipe Detected')
+                print(f'{"[" + "AutoSplitter" + "]":>15} Pit% Return Pipe Detected')
                 do_split(RETURN_PIPE_DELAY)
             elif hundo_run:
                 current_map_p = current_map[:3]
@@ -346,7 +357,7 @@ if __name__ == "__main__":
                 marioposx = mariox.read()
                 marioposz = marioz.read()
                 if -240 <= marioposx <= -160:
-                    print(f'{"[" + "Console" + "]":>15} Valid Door: Card Shop Door Detected')
+                    print(f'{"[" + "AutoSplitter" + "]":>15} Valid Door: Card Shop Door Detected')
                     while marioposz > 1750 or marioposz == 0:
                         marioposz = marioz.read()
                         print(marioposz)
@@ -356,7 +367,7 @@ if __name__ == "__main__":
                 marioposz = marioz.read()
                 if marioposz > 1739:
                     valid_door = False
-                print(f'{"[" + "Console" + "]":>15} Valid Door: Card Shop Door Detected')
+                print(f'{"[" + "AutoSplitter" + "]":>15} Valid Door: Card Shop Door Detected')
                 if valid_door:
                     while marioposz < 1750:
                         marioposz = marioz.read()
@@ -369,7 +380,7 @@ if __name__ == "__main__":
         current_loadSeq = seqLoadWork_state.read()
         while current_loadSeq > 10:
             errormessage = False
-            print(f'{"[" + "Console" + "]":>15} Please go back to file select')
+            print(f'{"[" + "AutoSplitter" + "]":>15} Please go back to file select')
             errormessage = True
             while errormessage and current_loadSeq > 10:
                 current_loadSeq = seqLoadWork_state.read()
@@ -380,36 +391,36 @@ if __name__ == "__main__":
     while runstarted == False:
         currentPADbutton = buttonsPADHeld.read()
         currentBUTbutton = buttonsBUTHeld.read()
-        print(f'{"[" + "Console" + "]":>15} Auto Splitter Ready! Please select your file.')
+        print(f'{"[" + "AutoSplitter" + "]":>15} Auto Splitter Ready! Please select your file.')
         while seqLoadWork_state.read() != 0x12d:
             time.sleep(1 / FPS)
-        print(f'{"[" + "Console" + "]":>15} File select split detected.')
-        print(f'{"[" + "Console" + "]":>15} Please wait a moment...')
+        print(f'{"[" + "AutoSplitter" + "]":>15} File select split detected.')
+        print(f'{"[" + "AutoSplitter" + "]":>15} Please wait a moment...')
         framewaitcount = 0
         while framewaitcount < FPS:
             currentPADbutton = buttonsPADHeld.read()
             if currentPADbutton != 0:
-                print(f'{"[" + "Console" + "]":>15} Split canceled, please go back to file select')
+                print(f'{"[" + "AutoSplitter" + "]":>15} Split canceled, please go back to file select')
                 fileError = True
                 break
             msec_wait(1000 / FPS)
             framewaitcount += 1
         if fileError == False:
-            print(f'{"[" + "Console" + "]":>15} Ready! Press 2 to begin your run.')
+            print(f'{"[" + "AutoSplitter" + "]":>15} Ready! Press 2 to begin your run.')
             filestart = True
             while currentBUTbutton != 1:
                 currentPADbutton = buttonsPADHeld.read()
                 currentBUTbutton = buttonsBUTHeld.read()
                 while currentPADbutton != 0:
                     if errormessage == False:
-                        print(f'{"[" + "Console" + "]":>15} Split canceled, please go back to file select')
+                        print(f'{"[" + "AutoSplitter" + "]":>15} Split canceled, please go back to file select')
                     errormessage = True
                     filestart = False
                     break
                 time.sleep(1 / FPS)
         if filestart and fileError == False:
             PressRelease(keyCodeMap[key_code], 100)
-            print(f'{"[" + "Console" + "]":>15} Good Luck!')
+            print(f'{"[" + "AutoSplitter" + "]":>15} Good Luck!')
             time.sleep(10)
             runstarted = True
             errormessage = False
@@ -420,11 +431,11 @@ if __name__ == "__main__":
             while current_loadSeq > 10:
                 errormessage = False
                 if framewaitcount < FPS:
-                    print(f'{"[" + "Console" + "]":>15} Please close the current textbox.')
+                    print(f'{"[" + "AutoSplitter" + "]":>15} Please close the current textbox.')
                 errormessage = True
                 while errormessage and current_loadSeq > 10:
                     current_loadSeq = seqLoadWork_state.read()
-            print(f'{"[" + "Console" + "]":>15} Please wait a moment...')
+            print(f'{"[" + "AutoSplitter" + "]":>15} Please wait a moment...')
             time.sleep(3)
 
     while True:
@@ -450,8 +461,8 @@ if __name__ == "__main__":
                     do_split(START_OR_CREDITS_DELAY)
                     hundo_sequence = 8
         except RuntimeError as e: # If dolphin is disconnected, should not error for any other reason
-            print(f'{"[" + "Console" + "]":>15} {e}')
+            print(f'{"[" + "AutoSplitter" + "]":>15} {e}')
             time.sleep(1)
-            print(f'{"[" + "Console" + "]":>15} Dolphin not detected, restarting...')
+            print(f'{"[" + "AutoSplitter" + "]":>15} Dolphin not detected, restarting...')
             time.sleep(3)
             restart_program()
