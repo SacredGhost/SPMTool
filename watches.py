@@ -496,6 +496,61 @@ watches = {
         },
         "datatype": Datatype.FLOAT,
     },
+    "Camera Target Z" : {
+        "addresses" : {
+            "E": [0x8076AFB0, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.FLOAT,
+    },
+    "Camera Position X" : {
+        "addresses" : {
+            "E": [0x8076AF9C, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.FLOAT,
+    },
+    "Camera Position Y" : {
+        "addresses" : {
+            "E": [0x8076AFA0, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.FLOAT,
+    },
+    "Camera Position Z" : {
+        "addresses" : {
+            "E": [0x8076AFA4, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.FLOAT,
+    },
+    "Camera Mode" : {
+        "addresses" : {
+            "E": [0x8076AE49, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.BYTE,
+    },
+    "Cutscene Count" : {
+        "addresses" : {
+            "E": [0x804CD48D, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.BYTE,
+    },
+
 }
 
 #     MemoryWatch("Pixl slot 1", 0x804ceaec, Datatype.WORD),
