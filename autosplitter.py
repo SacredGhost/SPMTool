@@ -29,15 +29,19 @@ if __name__ == "__main__":
     Enter6AgainSplit = config['Settings']['Enter6AgainSplit']
     Enter7AgainSplit = config['Settings']['Enter7AgainSplit']
     CountBleckSplit = config['Settings']['CountBleckSplit']
+    epitsplits = config['Settings']['ExtraPitSplits']
 
     if CountBleckSplit == 'True':
         CountBleckSplit = True
     elif CountBleckSplit == 'False':
         CountBleckSplit = False
 
-    epitsplits = config['Settings']['ExtraPitSplits']
+    if epitsplits == 'True':
+        epitsplits = True
+    elif epitsplits == 'False':
+        epitsplits = False
 
-    print(f'{"[" + "AutoSplitter" + "]":>15} SPM Auto Splitter [vBeta2]')
+    print(f'{"[" + "AutoSplitter" + "]":>15} SPM Auto Splitter [vBeta3]')
 
     def do_split(delay):
         current_framecount = frame_count.read()
@@ -46,9 +50,14 @@ if __name__ == "__main__":
         PressRelease(keyCodeMap[key_code], 100)
         msec_wait(5000)
 
-    def frame_wait(delay):
+    def frame_wait(delay, timeout_sec=10):
+        start_time = time.time()
         current_framecount = frame_count.read()
+        
         while frame_count.read() < current_framecount + delay:
+            if time.time() - start_time > timeout_sec:
+                print(f'{"[" + "AutoSplitter" + "]":>15} Error: frame_wait got stuck in an infinite loop!')
+                break
             time.sleep(1 / FPS)
 
     def msec_wait(delay):
@@ -58,7 +67,7 @@ if __name__ == "__main__":
     SLEEP_TIME = 5 # DO NOT CHANGE
     START_OR_CREDITS_DELAY = 0 # DO NOT CHANGE
     STAR_BLOCK_SPLIT_DELAY = 240 # Default: 240 frames
-    PURE_HEART_SPLIT_DELAY = 727 # Default: 727 frames
+    PURE_HEART_SPLIT_DELAY = 697 # Default: 697 frames
     ROCK_HEART_SPLIT_DELAY = 721 # Default: 721 frames
     DOOR_CLOSE_SPLIT_DELAY = 0 # Default: 0 frames
     FADEOUT_DOOR_SPLIT_DELAY = 84 # Default: 84 frames
@@ -66,7 +75,7 @@ if __name__ == "__main__":
     CB_DEFEAT_DELAY = 150 # Default: 150 frames
     SD_DEFEAT_DELAY = 40 # Default: 40 frames
     RETURN_PIPE_DELAY = 282 # Default: 282 frames
-    DOWN_PIPE_DELAY = 156 # Default: 156 frames 
+    DOWN_PIPE_DELAY = 156 # Default: 156 frames
 
     ANY_SPLIT_MAPS = ("mac_02", "mac_12", "ls4_10")
     PIT_MAPS = ("dan_01", "dan_02", "dan_03", "dan_04", "dan_41", "dan_42", "dan_43", "dan_44")
@@ -115,6 +124,8 @@ if __name__ == "__main__":
     hundo_run = False
     hundo_sequence = 0
     flopPit = 1
+    room_enter = 1
+    allpixls = 0
 
     extra_pit_splits = epitsplits
 
@@ -155,6 +166,8 @@ if __name__ == "__main__":
         global hundo_run
         global extra_pit_splits
         global hundo_sequence
+        global flopPit
+        global room_enter
 
         if script_ptr == STAR_BLOCK_EVT_SCRIPT:
             print(f'{"[" + "AutoSplitter" + "]":>15} Detected Star Block Hit')
@@ -195,16 +208,36 @@ if __name__ == "__main__":
                     door_name = 'Chapter 5'
                 elif 222 <= current_sequence <= 224 and (260 <= marioposx <= 340):
                     door_name = 'Chapter 6'
-                elif Enter6AgainSplit:
-                    if current_sequence == 281 and (260 <= marioposx <= 340):
+                elif current_sequence == 281 and (260 <= marioposx <= 340):
+                    if Enter6AgainSplit:
                         door_name = 'Chapter 6-?'
-                elif Enter7AgainSplit:
-                    if current_sequence == 303 and (410 <= marioposx <= 490):
+                elif current_sequence == 303 and (410 <= marioposx <= 490):
+                    if Enter7AgainSplit:
                         door_name = 'Chapter 7'
+                elif current_sequence == 127 and (-490 <= marioposx <= -410):
+                    door_name = "1.89 million Point Grind"
+                    split_delay = FADEOUT_DOOR_SPLIT_DELAY
+                    print(f'{"[" + "AutoSplitter" + "]":>15} 100% run detected')
+                    hundo_run = True
+                elif hundo_run:
+                    if hundo_sequence == 0:
+                        if (-490 <= marioposx <= -410):
+                            door_name = 'Enter Chapter 1'
+                            hundo_sequence = 1
+                            split_delay = FADEOUT_DOOR_SPLIT_DELAY
+                    elif hundo_sequence == 11:
+                        if (260 <= marioposx <= 340):
+                            door_name = "100 Sammers"
+                            hundo_sequence = 12
+                            split_delay = FADEOUT_DOOR_SPLIT_DELAY
+                    else:
+                        valid_door = False
+                else:
+                    valid_door = False
             elif current_map == "mac_12":
-                if current_sequence in (356,357) and (-80 <= marioposx <= -80):
+                if current_sequence in (356, 357) and (-80 <= marioposx <= 80):
                     door_name = 'Chapter 8'
-            elif current_sequence == 409 and (1100 <= marioposx <= 1200):
+            elif current_map == "ls4_10" and current_sequence == 409 and (1100 <= marioposx <= 1200):
                 door_name = 'Bleck'
                 split_delay = FADEOUT_DOOR_SPLIT_DELAY
             elif current_map in PIT_MAPS or current_map in PIT_10_MAPS:
@@ -214,48 +247,44 @@ if __name__ == "__main__":
                         door_name = "Pit"
                     elif current_map in PIT_MAPS:
                         valid_door = False
-                    if currentGSW1 == 99 and extra_pit_splits == False:
-                        if current_map == "dan_04" or current_map == "dan_44":
-                            split_delay = FADEOUT_DOOR_SPLIT_DELAY
-                            door_name = "Room 99"
-                            if flopPit == 1:
-                                valid_door = False
-                            else:
+                    if currentGSW1 in (99, 199) and not extra_pit_splits:
+                        split_delay = FADEOUT_DOOR_SPLIT_DELAY
+                        if current_map == "dan_04":
+                            if room_enter == 1:
+                                room_enter = 2
+                                print(room_enter)
+                                time.sleep(2)
+                            elif room_enter == 2:
                                 valid_door = True
+                                door_name = "Room 99"
+                                room_enter = 1
+                                print(room_enter)
+                        elif current_map == "dan_44" and flopPit == 1:
+                            valid_door = False
+                        elif current_map == "dan_44" and flopPit == 2:
+                            if room_enter == 1:
+                                room_enter = 2
+                                time.sleep(2)
+                            elif room_enter == 2:
+                                valid_door = True
+                                door_name = "Room 99"
+                                room_enter = 1
                 if current_map in PIT_10_MAPS:
-                    if current_map != "dan_30" or current_map != "dan_70":
+                    if current_map != "dan_30" and current_map != "dan_70":
                         if marioposx > 250:
                             split_delay = FADEOUT_DOOR_SPLIT_DELAY
                             door_name = "Pit Checkpoint"
                             valid_door = True
                         else:
                             valid_door = False
-            elif current_map == "mac_02" and current_sequence == 127:
-                if (-490 <= marioposx <= -410):
-                    door_name = "1.89 million Point Grind"
-                    split_delay = FADEOUT_DOOR_SPLIT_DELAY
-                    print(f'{"[" + "AutoSplitter" + "]":>15} 100% run detected')
-                else:
-                    valid_door = False
-            elif hundo_run:
-                if hundo_sequence == 0 and current_map == "mac_02":
-                    if (-490 <= marioposx <= -410):
-                        door_name = 'Enter Chapter 1'
-                        hundo_sequence = 1
-                        split_delay = FADEOUT_DOOR_SPLIT_DELAY
-                elif hundo_sequence == 11 and current_map == "mac_02":
-                    if (260 <= marioposx <= 340):
-                        door_name = "100 Sammers"
-                        hundo_sequence = 12
-                        split_delay = FADEOUT_DOOR_SPLIT_DELAY
-                    else:
-                        valid_door = False
             else:
-                valid_door = False    
-            if (valid_door):
-                if door_name != None:
+                valid_door = False
+            if valid_door:
+                if door_name is not None and door_name != "None":
                     print(f'{"[" + "AutoSplitter" + "]":>15} Valid Door: {door_name} Door Detected')
                     do_split(split_delay)
+                else:
+                    time.sleep(3)
 
         if script_ptr == CB_DEFEAT_EVT_SCRIPT:
             if CountBleckSplit:
@@ -339,15 +368,19 @@ if __name__ == "__main__":
             elif hundo_run:
                 current_map_p = current_map[:3]
                 if hundo_sequence == 3 and current_map_p == "gn2":
+                    print(f'{"[" + "AutoSplitter" + "]":>15} Amazy Dayzee Return Pipe Detected')
                     do_split(RETURN_PIPE_DELAY)
                     hundo_sequence = 4
                 elif hundo_sequence == 4 and current_map_p == "an1":
+                    print(f'{"[" + "AutoSplitter" + "]":>15} Return Pipe Detected')
                     do_split(RETURN_PIPE_DELAY)
                     hundo_sequence = 5
                 elif hundo_sequence == 5 and current_map_p == "ls4":
+                    print(f'{"[" + "AutoSplitter" + "]":>15} Return Pipe Detected')
                     do_split(RETURN_PIPE_DELAY)
                     hundo_sequence = 6
                 elif hundo_sequence == 8 and current_map_p == "gn3":
+                    print(f'{"[" + "AutoSplitter" + "]":>15} Return Pipe Detected')
                     do_split(RETURN_PIPE_DELAY)
                     hundo_sequence = 9
 
@@ -460,6 +493,12 @@ if __name__ == "__main__":
                 if binary_rep[6] == '1':
                     do_split(START_OR_CREDITS_DELAY)
                     hundo_sequence = 8
+
+            if sequence_position == 424 and hundo_run == False and allpixls == 0:
+                do_split(START_OR_CREDITS_DELAY)
+                print(f'{"[" + "AutoSplitter" + "]":>15} GG :)')
+                allpixls = 1
+
         except RuntimeError as e: # If dolphin is disconnected, should not error for any other reason
             print(f'{"[" + "AutoSplitter" + "]":>15} {e}')
             time.sleep(1)
