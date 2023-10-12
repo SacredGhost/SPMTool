@@ -2,7 +2,7 @@
 A universal repository for the autosplitter, shared stats, and hide and seek
 
 # SPM Auto Splitter
-### vBeta2
+### vBeta3
 An external auto splitter for Dolphin Emulator speedruns of Super Paper Mario. <br />
 Supports all versions of the game, and since it's external, will support all timers that use hotkeys.
 
