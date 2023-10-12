@@ -468,7 +468,34 @@ watches = {
             "K": [0]
         },
         "datatype": Datatype.BYTEARRAY,
-    }
+    },
+    "FOV Y" : {
+        "addresses" : {
+            "E": [0x8076AFC8, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.FLOAT,
+    },
+    "Camera Target X" : {
+        "addresses" : {
+            "E": [0x8076AFA8, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.FLOAT,
+    },
+    "Camera Target Y" : {
+        "addresses" : {
+            "E": [0x8076AFAC, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.FLOAT,
+    },
 }
 
 #     MemoryWatch("Pixl slot 1", 0x804ceaec, Datatype.WORD),
