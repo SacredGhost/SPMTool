@@ -399,61 +399,63 @@ watches = {
     },
     "HP" : {
         "addresses" : {
-            "E": [0x0, 0x0, 0x0],
+            "E": [0x804cea34, 0x0, 0x0],
             "P": [0x0, 0x0],
             "J": [0x0, 0x0],
             "K": [0x0]
         },
-        "datatype": Datatype.BYTE
+        "datatype": Datatype.WORD
     },
     "Max HP" : {
         "addresses" : {
-            "E": [0x0, 0x0, 0x0],
+            "E": [0x804cea38, 0x0, 0x0],
             "P": [0x0, 0x0],
             "J": [0x0, 0x0],
             "K": [0x0]
         },
-        "datatype": Datatype.BYTE
+        "datatype": Datatype.WORD
     },
     "Attack" : {
         "addresses" : {
-            "E": [0x0, 0x0, 0x0],
+            "E": [0x804cea30, 0x0, 0x0],
             "P": [0x0, 0x0],
             "J": [0x0, 0x0],
             "K": [0x0]
         },
-        "datatype": Datatype.BYTE
+        "datatype": Datatype.WORD
     },
     "Coins" : {
         "addresses" : {
-            "E": [0x0, 0x0, 0x0],
+            "E": [0x804cea44, 0x0, 0x0],
             "P": [0x0, 0x0],
             "J": [0x0, 0x0],
             "K": [0x0]
         },
-        "datatype": Datatype.BYTE
+        "datatype": Datatype.WORD
     },
     "Score" : {
         "addresses" : {
-            "E": [0x0, 0x0, 0x0],
+            "E": [0x804cea40, 0x0, 0x0],
             "P": [0x0, 0x0],
             "J": [0x0, 0x0],
             "K": [0x0]
         },
-        "datatype": Datatype.BYTE
+        "datatype": Datatype.WORD
     },
     "Level" : {
         "addresses" : {
-            "E": [0x0, 0x0, 0x0],
+            "E": [0x804cea2c, 0x0, 0x0],
             "P": [0x0, 0x0],
             "J": [0x0, 0x0],
             "K": [0x0]
         },
-        "datatype": Datatype.BYTE
+        "datatype": Datatype.WORD
     },
-    "FlipFlop Pipe" : {
+    "FlipFlop Pipe / GSWF 531 + GSWF 534" : { 
+        # GSWF 531 and GSWF 534 are booleans that are stored on the same byte as 2 of the 8 bits
+        # GSWF 531 is on Bit 5, and GSWF 534 is on Bit 2 of the below addresses
         "addresses" : {
-            "E": [0x0, 0x0, 0x0],
+            "E": [0x804e26d5, 0x804e3f55, 0x0],
             "P": [0x0, 0x0],
             "J": [0x0, 0x0],
             "K": [0x0]
@@ -462,7 +464,9 @@ watches = {
     },
     "Low HP TextBox" : {
         "addresses" : {
-            "E": [0x0, 0x0, 0x0],
+        # GSWF 420 is a boolean stored on a byte with 7 other GSWF bits.
+        # GSWF 420 is stored on Bit 4 of the below addresses
+            "E": [0x804e26cb, 0x804e3f48, 0x0],
             "P": [0x0, 0x0],
             "J": [0x0, 0x0],
             "K": [0x0]
