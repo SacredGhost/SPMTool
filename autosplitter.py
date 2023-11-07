@@ -68,7 +68,8 @@ if __name__ == "__main__":
     START_OR_CREDITS_DELAY = 0 # DO NOT CHANGE
     STAR_BLOCK_SPLIT_DELAY = 240 # Default: 240 frames
     PURE_HEART_SPLIT_DELAY = 697 # Default: 697 frames
-    ROCK_HEART_SPLIT_DELAY = 721 # Default: 721 frames
+    ROCK_HEART_SPLIT_DELAY = 741 # Default: 741 frames
+    BACKUP_PURE_HEART_SPLIT_DELAY = 1050
     DOOR_CLOSE_SPLIT_DELAY = 0 # Default: 0 frames
     FADEOUT_DOOR_SPLIT_DELAY = 84 # Default: 84 frames
     RETURN_SPLIT_DELAY = 426 # Default: 426 frames
@@ -88,6 +89,7 @@ if __name__ == "__main__":
 
     STAR_BLOCK_EVT_SCRIPT = get_address("star_block_evt_script")
     PURE_HEART_EVT_SCRIPT = get_address("pure_heart_evt_script")
+    BACKUP_PURE_HEART_EVT_SCRIPT = get_address("backup_pure_heart_evt_script")
     DOOR_CLOSE_EVT_SCRIPT = get_address("door_close_evt_script")
     RETURN_EVT_SCRIPT = get_address("return_evt_script")
     CB_DEFEAT_EVT_SCRIPT = get_address("CB_defeat_evt_script")
@@ -176,11 +178,15 @@ if __name__ == "__main__":
                 print(f'{"[" + "AutoSplitter" + "]":>15} GG :)')
 
         if script_ptr == PURE_HEART_EVT_SCRIPT:
-            print(f'{"[" + "AutoSplitter" + "]":>15} Pure Heart Detected')
+            print(f'{"[" + "AutoSplitter" + "]":>15} (Backup) Pure Heart Detected')
             if current_map == "wa1_27":
                 do_split(ROCK_HEART_SPLIT_DELAY)
             else:
                 do_split(PURE_HEART_SPLIT_DELAY)
+
+        if script_ptr == BACKUP_PURE_HEART_EVT_SCRIPT:
+            print(f'{"[" + "AutoSplitter" + "]":>15} Pure Heart Detected')
+            do_split(BACKUP_PURE_HEART_SPLIT_DELAY)
         
         if script_ptr == RETURN_EVT_SCRIPT:
             print(f'{"[" + "AutoSplitter" + "]":>15} Return Cutscene')
@@ -215,12 +221,11 @@ if __name__ == "__main__":
                     if Enter7AgainSplit:
                         door_name = 'Chapter 7'
                 elif current_sequence == 127 and (-490 <= marioposx <= -410):
-                    door_name = "1.89 million Point Grind"
-                    split_delay = FADEOUT_DOOR_SPLIT_DELAY
-                    print(f'{"[" + "AutoSplitter" + "]":>15} 100% run detected')
+                    print(f'{"[" + "AutoSplitter" + "]":>15} 100% / Shadoo run detected')
                     hundo_run = True
+                    hundo_sequence = 0
                 elif hundo_run:
-                    if hundo_sequence == 0:
+                    if hundo_sequence == 0 and current_sequence >= 422:
                         if (-490 <= marioposx <= -410):
                             door_name = 'Enter Chapter 1'
                             hundo_sequence = 1
@@ -235,7 +240,7 @@ if __name__ == "__main__":
                 else:
                     valid_door = False
             elif current_map == "mac_12":
-                if current_sequence in (356, 357) and (-80 <= marioposx <= 80):
+                if current_sequence in (356, 357) and (-80 <= marioposx <= 275):
                     door_name = 'Chapter 8'
             elif current_map == "ls4_10" and current_sequence == 409 and (1100 <= marioposx <= 1200):
                 door_name = 'Bleck'
@@ -281,6 +286,10 @@ if __name__ == "__main__":
                 valid_door = False
             if valid_door:
                 if door_name is not None and door_name != "None":
+                    if door_name == "Chapter 8":
+                        current_map = map.read()
+                        while current_map != "ls1_01":
+                            current_map = map.read()
                     print(f'{"[" + "AutoSplitter" + "]":>15} Valid Door: {door_name} Door Detected')
                     do_split(split_delay)
                 else:
@@ -350,11 +359,11 @@ if __name__ == "__main__":
                     do_split(DOWN_PIPE_DELAY)
                     if current_map == "dan_70" and flopPit == 1:
                         flopPit = 2
+                        if hundo_run == True and hundo_sequence == 1:
+                            hundo_sequence = 2
                     elif current_map == "dan_70" and flopPit == 2:
                         if hundo_run == False:
                             print(f'{"[" + "AutoSplitter" + "]":>15} GG :)')
-                        elif hundo_sequence == 1:
-                            hundo_sequence = 2
                         elif hundo_sequence == 2:
                             hundo_sequence = 3
                     elif current_map == "dan_30":
@@ -383,6 +392,10 @@ if __name__ == "__main__":
                     print(f'{"[" + "AutoSplitter" + "]":>15} Return Pipe Detected')
                     do_split(RETURN_PIPE_DELAY)
                     hundo_sequence = 9
+            elif current_map == "he1_05" and sequence_position == 127:
+                print(f'{"[" + "AutoSplitter" + "]":>15} 1.89 Million Point Grind Return Pipe Detected')
+                do_split(RETURN_PIPE_DELAY)
+                hundo_sequence = 1
 
         if script_ptr == TOWN_DOOR_EVT_SCRIPT:
             valid_door = True
@@ -478,7 +491,7 @@ if __name__ == "__main__":
             if current_map == "ls4_11" and CountBleckSplit:
                 current_effcurcount = effcurcount.read()
 
-            findInStructArray(evt_entries, EVT_ENTRY_SIZE, EVT_ENTRY_SCRIPT_PTR_OFFSET, [STAR_BLOCK_EVT_SCRIPT, PURE_HEART_EVT_SCRIPT, DOOR_CLOSE_EVT_SCRIPT, RETURN_EVT_SCRIPT, CB_DEFEAT_EVT_SCRIPT, SD_DEFEAT_EVT_SCRIPT, CREDITS_START_SCRIPT, RETURN_PIPE_SCRIPT, DOWN_PIPE_EVT_SCRIPT, TOWN_DOOR_EVT_SCRIPT], Datatype.WORD, evt_entry_cb)
+            findInStructArray(evt_entries, EVT_ENTRY_SIZE, EVT_ENTRY_SCRIPT_PTR_OFFSET, [STAR_BLOCK_EVT_SCRIPT, PURE_HEART_EVT_SCRIPT, DOOR_CLOSE_EVT_SCRIPT, RETURN_EVT_SCRIPT, CB_DEFEAT_EVT_SCRIPT, SD_DEFEAT_EVT_SCRIPT, CREDITS_START_SCRIPT, RETURN_PIPE_SCRIPT, DOWN_PIPE_EVT_SCRIPT, TOWN_DOOR_EVT_SCRIPT, BACKUP_PURE_HEART_EVT_SCRIPT], Datatype.WORD, evt_entry_cb)
 
             if hundo_sequence == 6:
                 current_recipeByte6 = knownRecipe_Byte6.read()

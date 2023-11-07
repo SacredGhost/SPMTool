@@ -172,6 +172,15 @@ watches = {
         },
         "datatype": Datatype.VOIDPTR
     },
+    "backup_pure_heart_evt_script" : {
+        "addresses": {
+            "E": [0x803cf204, 0x803d0564, 0x803d0704],
+            "P": [0x8040eb6c, 0x8040eb6c],
+            "J": [0x803a4484, 0x803a5604],
+            "K": [0x8043f2ac]
+        },
+        "datatype": Datatype.VOIDPTR
+    },
     "door_close_evt_script" : {
         "addresses": {
             "E": [0x803d6048, 0x803d73a8, 0x803d7588],
