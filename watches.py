@@ -550,7 +550,6 @@ watches = {
         },
         "datatype": Datatype.BYTE,
     },
-
 }
 
 #     MemoryWatch("Pixl slot 1", 0x804ceaec, Datatype.WORD),

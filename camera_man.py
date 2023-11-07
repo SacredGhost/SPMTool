@@ -1,3 +1,4 @@
+import tkinter as tk
 from watches import *
 
 # Hook Python to Dolphin.
@@ -11,6 +12,7 @@ cam_target_z = get_watch("Camera Target Z")
 cam_pos_x = get_watch("Camera Position X")
 cam_pos_y = get_watch("Camera Position Y")
 cam_pos_z = get_watch("Camera Position Z")
+cam_mode = get_watch("Camera Mode")
 mario_x = get_watch("Mario_X")
 mario_y = get_watch("Mario_Y")
 mario_z = get_watch("Mario_Z")
@@ -29,3 +31,16 @@ print()
 print(mario_x.read())
 print(mario_y.read())
 print(mario_z.read())
+print(fov_y.read())
+
+cam_mode.write(3)
+cutescene_count.write(1)
+
+cam_target_x.write(0)
+cam_target_y.write(0)
+cam_target_z.write(0)
+
+cam_pos_x.write(0)
+cam_pos_y.write(100)
+cam_pos_z.write(500)
+fov_y.write(100)
