@@ -399,77 +399,76 @@ watches = {
     },
     "HP" : {
         "addresses" : {
-            "E": [0x804cea34, 0x0, 0x0],
-            "P": [0x0, 0x0],
-            "J": [0x0, 0x0],
-            "K": [0x0]
+            "E": [0x804cea34, 0x804d02b4, 0x804d0434],
+            "P": [0x80511a34, 0x80511a34],
+            "J": [0x804a3d34, 0x804a5334],
+            "K": [0x8054931c]
         },
         "datatype": Datatype.WORD
     },
     "Max HP" : {
         "addresses" : {
-            "E": [0x804cea38, 0x0, 0x0],
-            "P": [0x0, 0x0],
-            "J": [0x0, 0x0],
-            "K": [0x0]
+            "E": [0x804cea38, 0x804d02b8, 0x804d0438],
+            "P": [0x80511a38, 0x80511a38],
+            "J": [0x804a3d38, 0x804a5338],
+            "K": [0x80549320]
         },
         "datatype": Datatype.WORD
     },
     "Attack" : {
         "addresses" : {
-            "E": [0x804cea30, 0x0, 0x0],
-            "P": [0x0, 0x0],
-            "J": [0x0, 0x0],
-            "K": [0x0]
+            "E": [0x804cea30, 0x804d02b0, 0x804d0430],
+            "P": [0x80511a30, 0x80511a30],
+            "J": [0x804a3d30, 0x804a5330],
+            "K": [0x80549318]
         },
         "datatype": Datatype.WORD
     },
     "Coins" : {
         "addresses" : {
-            "E": [0x804cea44, 0x0, 0x0],
-            "P": [0x0, 0x0],
-            "J": [0x0, 0x0],
-            "K": [0x0]
+            "E": [0x804cea44, 0x804d02c4, 0x804d0444],
+            "P": [0x80511a44, 0x80511a44],
+            "J": [0x804a3d44, 0x804a5344],
+            "K": [0x8054932c]
         },
         "datatype": Datatype.WORD
     },
     "Score" : {
         "addresses" : {
-            "E": [0x804cea40, 0x0, 0x0],
-            "P": [0x0, 0x0],
-            "J": [0x0, 0x0],
-            "K": [0x0]
+            "E": [0x804cea40, 0x804d02c0, 0x804d0440],
+            "P": [0x80511a40, 0x80511a40],
+            "J": [0x804a3d40, 0x804a5340],
+            "K": [0x80549328]
         },
         "datatype": Datatype.WORD
     },
     "Level" : {
         "addresses" : {
-            "E": [0x804cea2c, 0x0, 0x0],
-            "P": [0x0, 0x0],
-            "J": [0x0, 0x0],
-            "K": [0x0]
+            "E": [0x804cea2c, 0x804d02ac, 0x804d042c],
+            "P": [0x80511a2c, 0x80511a2c],
+            "J": [0x804a3d2c, 0x804a532c],
+            "K": [0x80549314]
         },
         "datatype": Datatype.WORD
     },
     "FlipFlop Pipe / GSWF 531 + GSWF 534" : { 
-        # GSWF 531 and GSWF 534 are booleans that are stored on the same byte as 2 of the 8 bits
+        # GSWF's are booleans stored on a byte with 7 other GSWF bits.
         # GSWF 531 is on Bit 5, and GSWF 534 is on Bit 2 of the below addresses
         "addresses" : {
-            "E": [0x804e26d5, 0x804e3f55, 0x0],
-            "P": [0x0, 0x0],
-            "J": [0x0, 0x0],
-            "K": [0x0]
+            "E": [0x804e26d5, 0x804e3f55, 0x804e40d5],
+            "P": [0x805256d5, 0x805256d5],
+            "J": [0x804b79d5, 0x804b8fd5],
+            "K": [0x8055d035]
         },
         "datatype": Datatype.BYTE
     },
-    "Low HP TextBox" : {
+    "Low HP TextBox / GSWF 420" : {
         "addresses" : {
-        # GSWF 420 is a boolean stored on a byte with 7 other GSWF bits.
         # GSWF 420 is stored on Bit 4 of the below addresses
-            "E": [0x804e26cb, 0x804e3f48, 0x0],
-            "P": [0x0, 0x0],
-            "J": [0x0, 0x0],
-            "K": [0x0]
+            "E": [0x804e26cb, 0x804e3f48, 0x804e40cb],
+            "P": [0x805256cb, 0x805256cb],
+            "J": [0x804b79cb, 0x804b8fcb],
+            "K": [0x8055d02b]
         },
         "datatype": Datatype.BYTE
     },
