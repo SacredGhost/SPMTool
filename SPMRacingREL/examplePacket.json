@@ -5,9 +5,11 @@
         "max_HP": 20,
         "points": 83110,
         "coins": 33,
+        "sequence": 29,
         "player_x": 0,
         "player_y": 0,
         "player_z": 0,
-        "current_map": "gn4_14"
+        "current_map": "gn4_14",
+        "items": []
     }
 }

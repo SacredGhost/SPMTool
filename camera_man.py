@@ -18,7 +18,6 @@ mario_y = get_watch("Mario_Y")
 mario_z = get_watch("Mario_Z")
 fov_y = get_watch("FOV Y")
 
-
 # Rest of the code...
 print(cam_target_x.read())
 print(cam_target_y.read())
