@@ -41,7 +41,7 @@ if __name__ == "__main__":
     elif epitsplits == 'False':
         epitsplits = False
 
-    print(f'{"[" + "AutoSplitter" + "]":>15} SPM Auto Splitter [vBeta4]')
+    print(f'{"[" + "AutoSplitter" + "]":>15} SPM Auto Splitter [vBeta5]')
 
     def do_split(delay):
         current_framecount = frame_count.read()
@@ -67,7 +67,7 @@ if __name__ == "__main__":
     SLEEP_TIME = 5 # DO NOT CHANGE
     START_OR_CREDITS_DELAY = 0 # DO NOT CHANGE
     STAR_BLOCK_SPLIT_DELAY = 240 # Default: 240 frames
-    PURE_HEART_SPLIT_DELAY = 697 # Default: 697 frames
+    PURE_HEART_SPLIT_DELAY = 717 # Default: 717 frames
     ROCK_HEART_SPLIT_DELAY = 741 # Default: 741 frames
     BACKUP_PURE_HEART_SPLIT_DELAY = 1050
     DOOR_CLOSE_SPLIT_DELAY = 0 # Default: 0 frames
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     CB_DEFEAT_DELAY = 150 # Default: 150 frames
     SD_DEFEAT_DELAY = 40 # Default: 40 frames
     RETURN_PIPE_DELAY = 282 # Default: 282 frames
-    DOWN_PIPE_DELAY = 156 # Default: 156 frames
+    DOWN_PIPE_DELAY = 166 # Default: 166 frames
 
     ANY_SPLIT_MAPS = ("mac_02", "mac_12", "ls4_10")
     PIT_MAPS = ("dan_01", "dan_02", "dan_03", "dan_04", "dan_41", "dan_42", "dan_43", "dan_44")
@@ -174,7 +174,7 @@ if __name__ == "__main__":
         if script_ptr == STAR_BLOCK_EVT_SCRIPT:
             print(f'{"[" + "AutoSplitter" + "]":>15} Detected Star Block Hit')
             do_split(STAR_BLOCK_SPLIT_DELAY)
-            if hundo_sequence == 12:
+            if hundo_sequence == 12 and current_map == "wa4_26":
                 print(f'{"[" + "AutoSplitter" + "]":>15} GG :)')
 
         if script_ptr == PURE_HEART_EVT_SCRIPT:
@@ -257,13 +257,11 @@ if __name__ == "__main__":
                         if current_map == "dan_04":
                             if room_enter == 1:
                                 room_enter = 2
-                                print(room_enter)
                                 time.sleep(2)
                             elif room_enter == 2:
                                 valid_door = True
                                 door_name = "Room 99"
                                 room_enter = 1
-                                print(room_enter)
                         elif current_map == "dan_44" and flopPit == 1:
                             valid_door = False
                         elif current_map == "dan_44" and flopPit == 2:
