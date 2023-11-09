@@ -479,10 +479,10 @@ description = {
 }
 
 def teleport(location, door = '', area = ''):
-    next_sequence = get_watch("NextSeq")
-    next_map = get_watch("NextMap")
-    next_area = get_watch("NextArea")
-    next_door = get_watch("NextBero")
+    next_sequence = get_watch("Next Sequence")
+    next_map = get_watch("Next Map")
+    next_area = get_watch("Next Area")
+    next_door = get_watch("Next Bero")
     if next_sequence.read() == 2:
         next_sequence.write(3)
         while True:

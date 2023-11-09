@@ -661,6 +661,51 @@ watches = {
         },
         "datatype": Datatype.HALFWORD,
     },
+    "Next Area" : {
+        "addresses" : {
+            "E": [0x804CF240, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.STRING,
+    },
+    "Next Bero" : {
+        "addresses" : {
+            "E": [0x804CF280, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.STRING,
+    },
+    "Next Map" : {
+        "addresses" : {
+            "E": [0x804CF260, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.STRING,
+    },
+    "Current Map" : {
+        "addresses" : {
+            "E": [0x804E2594, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.STRING,
+    },
+    "Next Sequence" : {
+        "addresses" : {
+            "E": [0x8056D0DC, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.WORD,
+    },
 }
 
 #     MemoryWatch("Pixl slot 1", 0x804ceaec, Datatype.WORD),
