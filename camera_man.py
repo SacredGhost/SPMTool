@@ -1,4 +1,6 @@
 from watches import *
+from teleport import *
+import pyautogui
 
 # Hook Python to Dolphin.
 dme.hook()
@@ -30,18 +32,26 @@ print(mario_y.read())
 print(mario_z.read())
 print(fov_y.read())
 
-cam_mode.write(3)
-cutscene_count.write(1)
+for map in description:
+    teleport(map)
+    time.sleep(5)
 
-mario_x.write(0)
-mario_y.write(0)
-mario_z.write(0)
+    cam_mode.write(3)
+    cutscene_count.write(1)
 
-cam_target_x.write(0)
-cam_target_y.write(0)
-cam_target_z.write(0)
+    cam_target_x.write(0)
+    cam_target_y.write(0)
+    cam_target_z.write(0)
 
-cam_pos_x.write(0)
-cam_pos_y.write(100)
-cam_pos_z.write(1000)
-fov_y.write(100)
+    cam_pos_x.write(0)
+    cam_pos_y.write(100)
+    cam_pos_z.write(1000)
+    fov_y.write(100)
+    time.sleep(1)
+
+    mario_x.write(0)
+    mario_y.write(-1000)
+    mario_z.write(-1000)
+
+    pyautogui.leftClick()
+    time.sleep(5)
