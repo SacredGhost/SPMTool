@@ -1,5 +1,8 @@
 import pygame
 import sys
+import os
+project_root = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(project_root, '..'))
 from watches import *
 
 # Global variables
