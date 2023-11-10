@@ -706,6 +706,16 @@ watches = {
         },
         "datatype": Datatype.WORD,
     },
+    "RNG" : {
+        "addresses" : {
+            "E": [0x8056D13C, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.WORD,
+    }
+
 }
 
 #     MemoryWatch("Pixl slot 1", 0x804ceaec, Datatype.WORD),
