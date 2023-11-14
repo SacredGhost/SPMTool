@@ -50,8 +50,8 @@ for map in description:
     time.sleep(1)
 
     mario_x.write(0)
-    mario_y.write(-1000)
-    mario_z.write(-1000)
-
+    mario_y.write(5000)
+    mario_z.write(0)
+    time.sleep(1)
     pyautogui.leftClick()
-    time.sleep(5)
+    time.sleep(1)
