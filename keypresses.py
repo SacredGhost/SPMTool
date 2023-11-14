@@ -115,4 +115,5 @@ keyCodeMap = {
     '*'                 : 0x6A,
     '/'                 : 0x6F,
     '.'                 : 0x6E,
+    'space'             : 0x20,
 }

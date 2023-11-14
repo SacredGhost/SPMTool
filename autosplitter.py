@@ -41,7 +41,7 @@ if __name__ == "__main__":
     elif epitsplits == 'False':
         epitsplits = False
 
-    print(f'{"[" + "AutoSplitter" + "]":>15} SPM Auto Splitter [vBeta5]')
+    print(f'{"[" + "AutoSplitter" + "]":>15} SPM Auto Splitter [vBeta4]')
 
     def do_split(delay):
         current_framecount = frame_count.read()
