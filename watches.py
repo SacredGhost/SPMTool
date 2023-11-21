@@ -113,6 +113,17 @@ class BitFieldMemoryWatch(MemoryWatch):
 
 dme.hook()
 
+if not dme.is_hooked():
+    print(f'{"[" + "Console" + "]":>15} Not Hooked, waiting for connection to Dolphin')
+    while not dme.is_hooked():
+        time.sleep(0.01)
+        dme.hook()
+    print(f'{"[" + "Console" + "]":>15} Hooked... waiting...')
+    time.sleep(5) # Added a wait as it cannot read the addresses when dophin is still booting the game
+else:
+    print(f'{"[" + "Console" + "]":>15} Hooked... waiting...')
+    time.sleep(5)
+
 game_region = chr(dme.read_byte(0x80000003))
 game_revision = dme.read_byte(0x80000007)
 

@@ -8,8 +8,7 @@ from watches import *
 # Global variables
 FPS = 60
 
-# Load the image
-background = pygame.image.load("SPMRacingREL\graphics\R8PE01_2023-11-08_19-14-54.png")
+background = pygame.image.load(f"SPMRacingREL\graphics\placeholder.png")
 SCREEN_WIDTH = background.get_width()
 SCREEN_HEIGHT = background.get_height()
 SCREEN_TITLE = "SPMRaceMod"
@@ -18,6 +17,23 @@ RADIUS = 5
 mario_x = get_watch("Mario_X")
 mario_y = get_watch("Mario_Y")
 mario_z = get_watch("Mario_Z")
+map = get_watch("CurrentMap")
+
+current_map = ""
+
+def get_currentstagemap():
+    global current_map
+    global stage_background
+    new_map = map.read()
+
+    if new_map != current_map:
+        current_map = new_map
+        stage_background = current_map
+
+    return stage_background
+
+stage_background = "placeholder"
+current_background = "placeholder"
 
 # Initialize Pygame
 pygame.init()
@@ -31,45 +47,62 @@ clock = pygame.time.Clock()
 running = True
 
 while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+    try:    
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
 
-    # Clear the screen
-    screen.fill((0, 0, 0))
+        stage_background = get_currentstagemap()
 
-    # Update game logic here
-    # Assuming you have correctly implemented the watches
+        if current_background != stage_background:
+            try:
+                background = pygame.image.load(f"SPMRacingREL\graphics\{stage_background}.png")
+                current_background = stage_background
+            except FileNotFoundError:
+                stage_background = "placeholder"
+                background = pygame.image.load(f"SPMRacingREL\graphics\{stage_background}.png")
+                current_background = stage_background
 
-    # Draw game elements here
-    current_mario_x = int(mario_x.read())
-    current_mario_y = int(mario_y.read())
-    current_mario_z = int(mario_z.read())
+        # Clear the screen
+        screen.fill((0, 0, 0))
 
-    print(current_mario_x, current_mario_y, current_mario_z)
+        # Update game logic here
+        # Assuming you have correctly implemented the watches
 
-    screen.blit(background, (0, 0))  # Display the background image
-    current_x = current_mario_x
-    current_y = current_mario_y
-    
-    # Find the ratio of the image to position
-    width_ratio = SCREEN_WIDTH / 4000
-    height_ratio = SCREEN_HEIGHT / 2455
+        # Draw game elements here
+        current_mario_x = int(mario_x.read())
+        current_mario_y = int(mario_y.read())
+        current_mario_z = int(mario_z.read())
 
-    current_x = current_x * width_ratio 
-    current_y = current_y * height_ratio 
+        print(current_mario_x, current_mario_y, current_mario_z)
 
-    # Reposition the graphic to the center of the screen
-    current_x = SCREEN_WIDTH // 2 + current_x
-    current_y = SCREEN_HEIGHT // 2 - current_y
-    current_y += current_mario_z // 50
+        screen.blit(background, (0, 0))  # Display the background image
+        current_x = current_mario_x
+        current_y = current_mario_y
+        
+        # Find the ratio of the image to position
+        width_ratio = SCREEN_WIDTH / 4000
+        height_ratio = SCREEN_HEIGHT / 2455
 
-    pygame.draw.circle(screen, (255, 0, 0), (int(current_x), int(current_y) - RADIUS), RADIUS)
+        current_x = current_x * width_ratio 
+        current_y = current_y * height_ratio 
 
-    pygame.display.flip()
+        # Reposition the graphic to the center of the screen
+        current_x = SCREEN_WIDTH // 2 + current_x
+        current_y = SCREEN_HEIGHT // 2 - current_y
+        current_y += current_mario_z // 50
 
-    # Cap the frame rate
-    clock.tick(FPS)
+        pygame.draw.circle(screen, (255, 0, 0), (int(current_x), int(current_y) - RADIUS), RADIUS)
+
+        pygame.display.flip()
+
+        # Cap the frame rate
+        clock.tick(FPS)
+    except RuntimeError as e:
+        print(e)
+        while not dme.is_hooked():
+            time.sleep(3)
+            dme.hook()
 
 # Quit Pygame
 pygame.quit()
