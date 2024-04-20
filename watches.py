@@ -135,6 +135,8 @@ def get_watch(name: str) -> MemoryWatch:
     address = watch["addresses"][game_region][game_revision]
     if watch["datatype"] == Datatype.BYTEARRAY:
         return ByteArrayMemoryWatch(address, watch["size"])
+    if address == 0x0:
+        assert("This game version does not have a valid address in watches")
     return MemoryWatch(address, watch["datatype"])
 
 watches = {
@@ -482,6 +484,24 @@ watches = {
             "K": [0x8055d02b]
         },
         "datatype": Datatype.BYTE
+    },
+    "File Name" : {
+        "addresses" : {
+            "E": [0x804e2570, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.STRING
+    },
+    "3D Bar" : {
+        "addresses" : {
+            "E": [0x804cea3c, 0, 0],
+            "P": [0, 0],
+            "J": [0, 0],
+            "K": [0]
+        },
+        "datatype": Datatype.WORD
     },
     "Pixl slot 1" : {
         "addresses" : {

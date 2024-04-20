@@ -19,7 +19,7 @@ stats = {
     'Max HP': 10,
     'Attack': 1,
     'Coins': 0,
-    'Level': 1,
+    'Level': 99,
     'FlipFlop Pipe': 0,
     'Low HP Textbox': 16,
 }
@@ -133,7 +133,7 @@ def main():
     while True:
         try:
             # Bind the socket to a specific IP address and port
-            sock.bind(('0.0.0.0', 8080)) # this will open the whole server up to any connections to port 8080
+            sock.bind(('localhost', 5555)) # This will open up the server to your computer so you can join it
             break
 
         except Exception as e:
