@@ -12,6 +12,7 @@ messages = []
 
 stats_lock = threading.Lock()
 stats = {
+    'File Name': "None",
     'Score': 0,
     'HP': 10,
     'Max HP': 10,
@@ -47,7 +48,7 @@ def manual_levelup_check():
             attack += 1
         elif i != 1:
             max_hp += 5
-    
+    print(stats['File Name'])
     if stats['Max HP'] != max_hp:
         stats['Max HP'] = max_hp
         print("Stats were fixed from desyncronization")
@@ -164,7 +165,7 @@ def main():
     load_stats()
 
     # Create the server, set this to your public IP or cloud server, and change the port to an open port on your network/cloud service.
-    with socketserver.TCPServer(("0.0.0.0", 5556), MyTCPHandler) as server:
+    with ThreadedTCPServer(("0.0.0.0", 5556), MyTCPHandler) as server:
         print("Server started. Listening for connections...")
         
         # Start a thread to save stats periodically
@@ -188,6 +189,9 @@ def load_stats():
             print("Stats loaded from:", os.path.abspath(SAVE_FILE_PATH))
     except (FileNotFoundError, json.JSONDecodeError):
         print("Save file not found or invalid format. Using default stats.")
+
+class ThreadedTCPServer(socketserver.ThreadingTCPServer):
+    allow_reuse_address = True
 
 if __name__ == "__main__":
     main()

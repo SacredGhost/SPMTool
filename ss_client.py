@@ -63,6 +63,15 @@ def manual_levelup(current_score):
     previous_level = level
 
 watch_list = {
+    "File Name" : {
+        "addresses" : {
+            "E": [0x804e2570, 0x804e3df0, 0x804e3f70],
+            "P": [0x80525570, 0x80525570],
+            "J": [0x804b7870, 0x804b8e70],
+            "K": [0x8055ced0]
+        },
+        "datatype": Datatype.STRING
+    },
     "HP" : {
         "addresses" : {
             "E": [0x804cea34, 0x804d02b4, 0x804d0434],
@@ -200,9 +209,15 @@ def main():
                     changes = {}
                     for key in watch_list:
                         if key in data['data'] and initial_join:
-                            changes[key] = current_data[key] - recived_data[key]
+                            if key == "File Name":
+                                continue
+                            else:
+                                changes[key] = current_data[key] - recived_data[key]
                         elif key in data['data']:
-                            changes[key] = current_data[key] - previous_data[key]
+                            if key == "File Name":
+                                continue
+                            else:
+                                changes[key] = current_data[key] - previous_data[key]
 
                     # Send changelog
                     messages = []
@@ -239,17 +254,20 @@ def main():
                     # Write received + change
                     for key in watch_list:
                         if key in data['data']:
-                            get_data = get_watch(key)
-                            if current_data[key] == previous_data[key] + changes[key] and initial_join:
-                                initial_join = 2
-                                continue
-                            elif current_data[key] == recived_data[key] + changes[key] and initial_join == 2:
+                            if key == "File Name":
                                 continue
                             else:
-                                if initial_join:
-                                    get_data.write(recived_data[key])
+                                get_data = get_watch(key)
+                                if current_data[key] == previous_data[key] + changes[key] and initial_join:
+                                    initial_join = 2
+                                    continue
+                                elif current_data[key] == recived_data[key] + changes[key] and initial_join == 2:
+                                    continue
                                 else:
-                                    get_data.write(recived_data[key] + changes[key])
+                                    if initial_join:
+                                        get_data.write(recived_data[key])
+                                    else:
+                                        get_data.write(recived_data[key] + changes[key])
 
                     # Update previous data
                     if initial_join == 2:
@@ -259,8 +277,11 @@ def main():
                         initial_join = False
                     else:
                         for key in watch_list:
-                            if key in data['data']:
-                                previous_data[key] = recived_data[key] + changes[key]
+                            if key == "File Name":
+                                continue
+                            else:
+                                if key in data['data']:
+                                    previous_data[key] = recived_data[key] + changes[key]
                     manual_levelup(get_score.read())
 
                     # Print sent messages
