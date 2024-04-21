@@ -213,7 +213,6 @@ def main():
 
                     # Send difference
                     if changes:
-                        print("Sending...")
                         valid_send = True
                         if initial_join == False:
                             fix_score = get_score.read()
