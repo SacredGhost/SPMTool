@@ -487,19 +487,19 @@ watches = {
     },
     "File Name" : {
         "addresses" : {
-            "E": [0x804e2570, 0, 0],
-            "P": [0, 0],
-            "J": [0, 0],
-            "K": [0]
+            "E": [0x804e2570, 0x804e3df0, 0x804e3f70],
+            "P": [0x80525570, 0x80525570],
+            "J": [0x804b7870, 0x804b8e70],
+            "K": [0x8055ced0]
         },
         "datatype": Datatype.STRING
     },
     "3D Bar" : {
         "addresses" : {
-            "E": [0x804cea3c, 0, 0],
-            "P": [0, 0],
-            "J": [0, 0],
-            "K": [0]
+            "E": [0x804cea3c, 0x804d02bc, 0x804d043c],
+            "P": [0x80511a3c, 0x80511a3c],
+            "J": [0x804a3d3c, 0x804a533c],
+            "K": [0x80549324]
         },
         "datatype": Datatype.WORD
     },
