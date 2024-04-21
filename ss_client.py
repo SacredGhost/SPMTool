@@ -212,8 +212,9 @@ def main():
                                 messages.append(f'{"[" + username + "]":>15} {key}: {changes[key]}')
 
                     # Send difference
-                    valid_send = True
                     if changes:
+                        print("Sending...")
+                        valid_send = True
                         if initial_join == False:
                             fix_score = get_score.read()
                             if changes['Score'] and changes['Score'] <= 0:

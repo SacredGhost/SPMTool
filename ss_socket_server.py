@@ -98,7 +98,6 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
                         if 'data' in data and data['data'] and data['data']['Score'] >= 0:
                             with stats_lock:
                                 # Check if the data changed is in the stats dictionary
-                                manual_levelup_check()
                                 for key in data['data']:
                                     if key in stats:
                                         stats[key] += data['data'][key]
